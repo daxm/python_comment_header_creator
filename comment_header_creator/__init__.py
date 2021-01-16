@@ -6,7 +6,7 @@ EXPANDER = "=-"
 ENDING = " #"
 
 
-def generate_line(
+def _generate_line(
         title: str = "",
         max_width: int = MAXWIDTH,
         beginning: str = BEGINNING,
@@ -48,7 +48,7 @@ def uniline(
     while not valid_title:
         if not title:
             _title = input("Enter Title: ")
-        output, valid_title = generate_line(
+        output, valid_title = _generate_line(
             title=_title,
             max_width=max_width,
             beginning=beginning,
@@ -65,7 +65,7 @@ def multiline(
         ending: str = ENDING,
         expander: str = EXPANDER,
 ) -> str:
-    no_title, status = generate_line(max_width=max_width, beginning=beginning, ending=ending, expander=expander)
+    no_title, status = _generate_line(max_width=max_width, beginning=beginning, ending=ending, expander=expander)
     title_line = uniline(title=title,max_width=max_width, beginning=beginning, ending=ending, expander=expander)
     return f"{no_title}\n{title_line}\n{no_title}"
 

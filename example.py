@@ -1,4 +1,4 @@
-from comment_header_creator import uniline, multiline, generate_line
+from comment_header_creator import uniline, multiline, _generate_line
 
 print("uniline() no passed title:")
 print(uniline())
@@ -12,7 +12,7 @@ print(multiline(title='asdfasdf'))
 
 
 print("\nCall the generator directly.  (Remember it returns a Tuple!)")
-output, status = generate_line(title='ASDf')
+output, status = _generate_line(title='ASDf')
 print(f"{output}")
-output, status = generate_line()
+output, status = _generate_line()
 print(f"\n{output}")
