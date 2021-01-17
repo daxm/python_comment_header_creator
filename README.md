@@ -12,4 +12,47 @@ There are basically 2 main methods:  Basic or Fancy
 The last "hidden" function, _generate_line(), is the secret sauce to generating the lines.  You can call this 
 directly but bear in mind it returns a Tuple (string and a boolean).
 
-See example.py for how to use.
+## Example Uses
+See example.py for how to use or:
+  - Create a single-line header but input title from user input:
+```python
+import comment_header_creator as chc
+print(chc.uniline())
+```
+  yields:
+```bash
+Enter Title: title of section
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- TITLE OF SECTION -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
+```
+
+  - Create a multi-line header but input title from user input:
+```python
+import comment_header_creator as chc
+print(chc.multiline())
+```
+  yields:
+```bash
+Enter Title: Another Section
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- ANOTHER SECTION -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
+```
+
+  - Create a single-line (or multi-line) header by passing title in function call:
+```python
+import comment_header_creator as chc
+print(chc.uniline(title='Greatest Hits'))
+```
+  yields:
+```bash
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- GREATEST HITS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
+```
+
+  - You can also set your own 'expander' string:
+```
+import comment_header_creator as chc
+chc.uniline(title="it's a flesh wound", expander='0i')
+"# i0i0i0i0i0i0i0i0i0i0i0i0i0i0i0i0i0i0i0i0i0i0i0i IT'S A FLESH WOUND i0i0i0i0i0i0i0i0i0i0i0i0i0i0i0i0i0i0i0i0i0i0i0i #"
+```
+> NOTE:  In the previous example notice that we didn't use the print() function.  This will return a string, which you 
+> then need to "strip" the quotes off the front and end.  Thus, I suggest print()'ing your outputs.
