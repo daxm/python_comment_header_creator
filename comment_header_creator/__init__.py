@@ -14,7 +14,7 @@ def _generate_line(
         expander: str = EXPANDER,
 ) -> typing.Tuple[str, bool]:
     if title:
-        title = f" {title.upper()} -"
+        title = f" {title.upper()} {beginning[-1]}"
     else:
         title = expander
     remaining = max_width - len(beginning) - len(ending) - len(title)
