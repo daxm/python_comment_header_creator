@@ -5,9 +5,7 @@ EXPANDER = "=-"
 
 
 def _generate_line(
-        title: str = "",
-        max_width: int = MAXWIDTH,
-        expander: str = EXPANDER,
+    title: str = "", max_width: int = MAXWIDTH, expander: str = EXPANDER,
 ) -> typing.Tuple[str, bool]:
     if title:
         title = f" {title.upper()} {expander[-1]}"
@@ -24,15 +22,17 @@ def _generate_line(
         return output, True
     else:
         max_length = max_width - len(beginning) - len(ending) - 2
-        print(f"Length of string is too long.  Max possible string length: {max_length}.")
-        print(f"Either increase 'max_width' value or decrease 'title', or 'expander' lengths.")
+        print(
+            f"Length of string is too long.  Max possible string length: {max_length}."
+        )
+        print(
+            f"Either increase 'max_width' value or decrease 'title', or 'expander' lengths."
+        )
         return "", False
 
 
 def uniline(
-        title: str = "",
-        max_width: int = MAXWIDTH,
-        expander: str = EXPANDER,
+    title: str = "", max_width: int = MAXWIDTH, expander: str = EXPANDER,
 ) -> str:
     output = ""
     _title = ""
@@ -45,17 +45,13 @@ def uniline(
         if not title:
             _title = input("Enter Title: ")
         output, valid_title = _generate_line(
-            title=_title,
-            max_width=max_width,
-            expander=expander,
+            title=_title, max_width=max_width, expander=expander,
         )
     return output
 
 
 def multiline(
-        title: str = "",
-        max_width: int = MAXWIDTH,
-        expander: str = EXPANDER,
+    title: str = "", max_width: int = MAXWIDTH, expander: str = EXPANDER,
 ) -> str:
     no_title, status = _generate_line(max_width=max_width, expander=expander)
     title_line = uniline(title=title, max_width=max_width, expander=expander)
