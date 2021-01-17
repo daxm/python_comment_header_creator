@@ -12,6 +12,11 @@ There are basically 2 main methods:  Basic or Fancy
 > There is a "hidden" function, _generate_line(), is the secret sauce to generating the lines.  You can call this 
 > directly but bear in mind it returns a Tuple (string and a boolean).
 
+## Installation
+For some reason that I cannot figure out PyPi changes "comment_header_creator" into "comment-header-creator".  This 
+causes issues in that you have to use "dashes" to pip install but then use "underscores" to import.
+`pip install comment-header-creator`
+
 ## Example Uses
 See example.py for how to use or:
   - Create a single-line header but input title from user input:

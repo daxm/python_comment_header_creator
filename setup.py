@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 # Changes between releases or new pypi projects
 __VERSON__ = "20200116.2"
-__package_name__ = "comment-header-creator"
+__package_name__ = "comment_header_creator"
 __url__ = "https://github.com/daxm/python_comment_header_creator"
 __description__ = "Create nicely formatted comment strings to be used as headers/seperators in your code."
 
