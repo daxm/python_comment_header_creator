@@ -9,8 +9,8 @@ There are basically 2 main methods:  Basic or Fancy
  - Fancy (the multiline() method) returns a formatted string that is 3 lines long with the 'title' centered in the 
    center line.
 
-The last "hidden" function, _generate_line(), is the secret sauce to generating the lines.  You can call this 
-directly but bear in mind it returns a Tuple (string and a boolean).
+> There is a "hidden" function, _generate_line(), is the secret sauce to generating the lines.  You can call this 
+> directly but bear in mind it returns a Tuple (string and a boolean).
 
 ## Example Uses
 See example.py for how to use or:
