@@ -1,35 +1,37 @@
 from setuptools import setup, find_packages
 
+# Changes between releases or new pypi projects
+__VERSON__ = "20200116.1"
+__package_name__ = "comment-header-creator"
+__url__ = "https://github.com/daxm/python_comment_header_creator"
+__description__ = (
+    "Create nicely formatted comment strings to be used as headers/seperators in your code.",
+)
+
+# Stays the same (for me).
+__username__ = "daxm"
 __author__ = "Dax Mickelson"
 __author_email = "dmickels@cisco.com"
 __license__ = "BSD"
+__name__ = f"{__package_name__}-{__username__}"
+
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
 
 setup(
-    name='comment_header_creator',
-    version='20200116.0',
-    description="Create nicely formatted comment strings to be used as headers/seperators in your code.",
-    long_description="""Create nicely formatted comment strings to be used as headers/seperators in your code.""",
-    url='https://github.com/daxm/python_comment_header_creator/',
-    author='Dax Mickelson',
-    author_email='dmickels@cisco.com',
-    license='BSD',
+    name=__name__,
+    version=__VERSON__,
+    author=__author__,
+    author_email=__author_email,
+    description=__description__,
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url=__url__,
+    packages=find_packages(),
     classifiers=[
-        'Development Status :: 5 - Production/Stable',
-        'Environment :: Plugins',
-        'Intended Audience :: Developers',
-        'Intended Audience :: Other Audience',
-        'Intended Audience :: System Administrators',
-        'Natural Language :: English',
-        'Operating System :: POSIX :: Linux',
-        'Operating System :: MacOS',
-        'Operating System :: Microsoft',
-        'Programming Language :: Python :: 3',
-        'Topic :: Utilities',
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
     ],
-    keywords='header comment title seperator organize',
-    packages=find_packages(exclude=['docs', 'tests*']),
-    install_requires=[],
-    python_requires='>=3.6',
-    package_data={},
-    data_files=None,
+    python_requires=">=3.6",
 )
