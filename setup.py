@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 # Changes between releases or new pypi projects
-__VERSON__ = "20200116.2"
+__VERSION__ = "20210909.0"
 __package_name__ = "comment_header_creator"
 __url__ = "https://github.com/daxm/python_comment_header_creator"
 __description__ = "Create nicely formatted comment strings to be used as headers/seperators in your code."
@@ -18,7 +18,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name=__name__,
-    version=__VERSON__,
+    version=__VERSION__,
     author=__author__,
     author_email=__author_email,
     description=__description__,
